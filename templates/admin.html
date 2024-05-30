@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <style>
+        body {
+            /* Background image */
+            background-image: url("static/admin.jpg");
+            /* Set background size and repeat properties as needed */
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* Font color, size, and family for the whole body */
+            color: #0f0505; /* White text color */
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            /* Font size and family for the heading */
+            font-size: 30px;
+            font-family: "Times New Roman", serif;
+            text-align: center;
+        }
+
+        form {
+            /* Font size and family for the form elements */
+            font-size: 16px;
+            font-family: "Times New Roman", serif;
+            text-align: center;
+            margin-top: 20px;
+            margin-right: 500px;/* Adjust the margin to move the form down */
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #290366;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            /* Font size for the input fields */
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            /* Style the submit button */
+            background-color: #4CAF50;
+            color: #000000;
+            font-size: 20px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: "Times New Roman", serif;
+        }
+
+        input[type="submit"]:hover {
+            /* Add hover effect for the submit button */
+            background-color:  #4CAF50;
+        }
+        p {
+            /* Update font style for the heading */
+            font-family: "Times New Roman", serif;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            color:#e60b0b;
+            font-style: italic;
+          }
+
+          h2 {
+            /* Update font style for the heading */
+            font-family: "Times New Roman", serif;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            color:#f5f2f2;
+            margin-right: 500px
+          }
+
+
+        
+        .rolling-text {
+            /* Create a rolling animation */
+            animation: roll 20s linear infinite;
+            white-space: nowrap; /* Prevent line break to keep text on a single line */
+            overflow: hidden; /* Hide overflow to prevent text from overflowing container */
+        }
+
+        @keyframes roll {
+            /* Define the rolling animation */
+            0% {
+                transform: translateX(100%); /* Start from the right-most position */
+            }
+            100% {
+                transform: translateX(-100%); /* Move to the left-most position */
+            }
+        }
+        label {
+            display: block;
+            
+            color: #f3f3f2;
+           
+            padding: 5px 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: "Times New Roman", serif;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            
+          }
+          .navbar a {
+            /* Existing styles for the links (register, login, admin) */
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            /* Set link hover color */
+            transition: color 0.3s ease;
+          }
+      
+          .navbar a:hover {
+            /* Existing styles for the hover effect */
+            color:  #4CAF50;
+          }
+      
+          /* Style for the buttons */
+          .btn {
+            background-color:  #4CAF50;
+            color: #f8f4f4;
+            /* Add border-radius for rounded corners */
+            border-radius: 5px;
+          }
+      
+          .btn:hover {
+            background-color:  #4CAF50;
+          }
+    </style>
+</head>
+<body><center>
+    
+
+    
+
+
+    <div class="navbar">
+   
+        <a href="/login" class="btn">Login</a>
+        <a href="/index" class="btn">HOME</a>
+      </div >
+
+    </center>
+
+    <h2> STAFF Login</h2>
+    <form method="post" action="{{ url_for('admin') }}">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+        
+    <div class="rolling-text">
+        <p>This page is exclusively for administrators</p>
+    </div>
+</html>

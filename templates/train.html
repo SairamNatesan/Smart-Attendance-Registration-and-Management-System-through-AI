@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Training</title>
+    <style>
+        body {
+            /* Set background image */
+            background-image: url("static/train.jpg");
+            background-size: cover;
+            background-position: center;
+            /* Change font size, font family, and color */
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        /* Style the header */
+        h1 {
+            text-align: center;
+            margin-top: 60px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: #bde453;
+            font-weight: bold;
+        }
+        
+        /* Style the loading message */
+        #loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+      p{
+            text-align: center;
+            margin-top: 50px;
+            font-size: 28px;
+            font-family:'Times New Roman', Times, serif;
+            color: #f1eaea;
+        }
+        .navbar a {
+            /* Existing styles for the links (register, login, admin) */
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: #f5ebeb;
+            text-decoration: none;
+            /* Set link hover color */
+            transition: color 0.3s ease;
+          }
+      
+          .navbar a:hover {
+            /* Existing styles for the hover effect */
+            color:#4CAF50;
+          }
+      
+          /* Style for the buttons */
+          .btn {
+            background-color: #4CAF50;
+            color: #000;
+            /* Add border-radius for rounded corners */
+            border-radius: 5px;
+          }
+      
+          .btn:hover {
+            background-color: #4CAF50;
+          }
+          /* Apply styles to the button */
+#train-btn {
+    background-color: white; /* Set the background color to white */
+    color: black; /* Set the font color to black */
+    border: 1px solid black; /* Add a black border around the button */
+    padding: 10px 20px; /* Adjust the padding for better appearance */
+    border-radius: 5px; /* Round the corners of the button */
+    cursor: pointer; /* Change the cursor to a pointer when hovering over the button */
+  }
+  
+  /* Apply styles when hovering over the button */
+  #train-btn:hover {
+    background-color: #f1f1f1; /* Change the background color when hovering */
+  }
+  
+       
+    </style>
+</head>
+<body><center>
+    
+
+
+    <div class="navbar">
+        <a href="/data" class="btn">back</a>
+        <a href="/index" class="btn">HOME</a>
+      </div>
+    <h1>Model Training</h1>
+        
+   
+    <form method="post" action="/training" onsubmit="showLoading()">
+        <p>Click the 'Train Model' button to initiate the training process for your modeld</p>
+        <p>Note: The model training process may take 5 to 10 minutes. Please avoid navigating away from this page during the training</p>
+        <input type="submit" value="Train Model" id="train-btn">
+    </form>
+
+    <div id="loading">
+        <p>Your model is loading...</p>
+        <p>Please wait here...</p>
+    </div>
+</center>
+    <script>
+        function showLoading() {
+            // Show the loading message and disable the button
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('train-btn').disabled = true;
+
+            // Set the loading duration to 20 minutes (20 * 60 * 1000 milliseconds)
+            setTimeout(function() {
+                // Hide the loading message and enable the button (you should do this after the actual model training is complete)
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('train-btn').disabled = false;
+            }, 20 * 60 * 1000); // Set the loading duration to 20 minutes
+        }
+    </script>
+
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Professional Attendance</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url("static/index.jpg");/* Replace 'background-image.jpg' with your image path */
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .navbar {
+
+      overflow: hidden;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: left;
+      margin-left: 300px;
+      margin-right: 10px;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .center-container {
+      text-align: center;
+      margin-top: 130px;
+      margin-right: 180px;
+    }
+
+    h1, p {
+      color: white;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 24px;
+    }
+
+    .btn-container {
+      text-align: right;
+      margin-top: 20px;
+      margin-right: 20px;
+    }
+
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="/register" class="btn">REGISTER</a>
+    <a href="/login" class="btn">LOGIN</a>
+    <a href="/admin" class="btn">STAFF </a>
+  </div>
+  <div class="center-container">
+    <h1>Welcome to Professional Attendance System</h1>
+    <p>Your journey towards seamless attendance management begins here.</p>
+  </div>
+
+  <script>
+    {% with messages = get_flashed_messages() %}  
+    {% if messages %}
+        {% for message in messages %}
+            alert("{{  message  }}");
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+  </script>
+
+
+
+</body>
+</html>
